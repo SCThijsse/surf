@@ -1,0 +1,26 @@
+diff --git a/config.def.h b/config.def.h
+index 34265f6..cc2ac93 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -193,3 +193,5 @@ static Button buttons[] = {
+ 	{ OnAny,        0,              9,      clicknavigate,  { .i = +1 },    1 },
+ 	{ OnMedia,      MODKEY,         1,      clickexternplayer, { 0 },       1 },
+ };
++
++#define HOMEPAGE "https://duckduckgo.com/"
+diff --git a/surf.c b/surf.c
+index 2b54e3c..aad863e 100644
+--- a/surf.c
++++ b/surf.c
+@@ -2111,7 +2111,11 @@ main(int argc, char *argv[])
+ 	if (argc > 0)
+ 		arg.v = argv[0];
+ 	else
++#ifdef HOMEPAGE
++		arg.v = HOMEPAGE;
++#else
+ 		arg.v = "about:blank";
++#endif
+ 
+ 	setup();
+ 	c = newclient(NULL);
