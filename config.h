@@ -196,4 +196,4 @@ static Button buttons[] = {
 	{ OnMedia,      MODKEY,         1,      clickexternplayer, { 0 },       1 },
 };
 
-#define HOMEPAGE "file:///home/sjoerd/Software/tilde/sfw/index.html"
+#define HOMEPAGE "http://localhost:2000"
